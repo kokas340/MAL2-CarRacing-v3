@@ -1,7 +1,8 @@
-gymnasium
+gymnasium[box2d]       
 numpy
 stable-baselines3
 torch
+tensorflow
 matplotlib
 pygame
-tensorflow
+neat-python     
