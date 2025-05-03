@@ -6,3 +6,4 @@ tensorflow
 matplotlib
 pygame
 neat-python     
+opencv-python
