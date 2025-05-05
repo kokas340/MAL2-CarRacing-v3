@@ -5,7 +5,7 @@ from agents.neat_agent import NeatAgent
 from run_episode import run_agent
 
 # Load the saved genome
-with open("best_genome.pkl", "rb") as f:
+with open("best_genome_gen99.pkl", "rb") as f:
     genome = pickle.load(f)
 
 # Load NEAT config (same as used in evolve)

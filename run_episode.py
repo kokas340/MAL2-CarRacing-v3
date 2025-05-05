@@ -1,7 +1,7 @@
 import gymnasium as gym
 from agents.random_agent import RandomAgent
 
-def run_agent(env, agent, render=False, max_no_reward_steps=50, max_no_progress_steps=60):
+def run_agent(env, agent, render=False, max_no_reward_steps=50):
     obs, _ = env.reset(seed=42)
     total_reward = 0
     steps = 0
@@ -32,7 +32,7 @@ def run_agent(env, agent, render=False, max_no_reward_steps=50, max_no_progress_
         else:
             no_progress_steps = 0
 
-        if no_reward_steps >= max_no_reward_steps or no_progress_steps >= max_no_progress_steps:
+        if no_reward_steps >= max_no_reward_steps:
             break
 
     return total_reward, steps, no_reward_steps, no_progress_steps

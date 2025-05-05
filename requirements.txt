@@ -7,3 +7,4 @@ matplotlib
 pygame
 neat-python     
 opencv-python
+imageio

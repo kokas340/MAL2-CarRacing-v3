@@ -51,10 +51,19 @@ def eval_genomes(genomes, config):
     diversity_history.append(std_fitness)
 
     # 🔹 Track species count using config's species_set
-    num_species = len(config.species_set.species)
+    # 🔹 Safe species count tracking
+    if generation_counter > 0:
+        try:
+            num_species = len(stats.get_species_sizes()[-1])
+        except (IndexError, ValueError):
+            num_species = 0
+    else:
+        num_species = 0
+
     species_count_history.append(num_species)
 
     print(f"📈 Gen {generation_counter} Summary | Best: {best_fitness:.2f} | Avg: {avg_fitness:.2f} | Std: {std_fitness:.2f} | Species: {num_species}")
+
     generation_counter += 1
 
 if __name__ == "__main__":
